@@ -1,7 +1,5 @@
 # Instalar dependencias
 
-pip install Flask
-pip install strawberry
+pip install flask
 pip install sqlalchemy
-
-
+pip install strawberry-graphql
