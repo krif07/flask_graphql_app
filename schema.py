@@ -1,5 +1,5 @@
 import strawberry
-from typing import List
+from typing import List, Optional
 from sqlalchemy.orm import Session
 from models import CartItem
 from database import SessionLocal
@@ -11,8 +11,14 @@ class CartItemType:
     name: str
     price: float
     quantity: int
-    created_at: str
-    updated_at: str
+    created_at: Optional[str]
+    updated_at: Optional[str]
+
+    def resolve_created_at(self) -> Optional[str]:
+        return self.created_at.isoformat() if self.created_at else None
+
+    def resolve_updated_at(self) -> Optional[str]:
+        return self.updated_at.isoformat() if self.updated_at else None
 
 
 @strawberry.type

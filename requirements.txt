@@ -1,0 +1,4 @@
+flask
+uvicorn
+sqlalchemy
+strawberry-graphql
